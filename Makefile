@@ -1,35 +1,43 @@
-SRCS =  push_swap.c  \
-		errors.c     \
-		swap.c       \
-		
-CC =	cc -Wall -Werror -Wextra
+SRCS =  parsing.c   \
+        swap.c      \
+        stack.c		\
+		main.c      \
+		utils.c     \
 
-NAME =	push_swap
+OBJS = $(SRCS:.c=.o)
+
+CC = cc
+
+CFLAGS = -Wall -Wextra -Werror
+
+NAME = push_swap
 
 LIB = ./libft
 
-OBJS =	$(SRCS:.c=.o)
+LIBA = $(LIB)/libft.a
 
-all : $(NAME) 
+all: $(NAME)
 
-$(NAME): $(OBJS)
-	@make -C $(LIB)
-	@cp $(LIB)/libft.a $(NAME)
-	@ar -rsc $(NAME) $(OBJS)
-	@echo "TOUT EST GOOD🤓👍🔥"
+$(NAME): $(OBJS) $(LIBA)
+	@$(CC) $(CFLAGS) $(OBJS) $(LIBA) -o $(NAME)
+	@echo "TOUT EST GOOD 🤓👍🔥"
 
-%.o : %.c
-	@$(CC) -c $(SRCS)
+$(LIBA):
+	@$(MAKE) -C $(LIB)
 
-clean :
-	@make clean -C $(LIB)
+%.o: %.c
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	@$(MAKE) -C $(LIB) clean
 	@rm -f $(OBJS)
 	@echo "TOUT LES FICHIERS .o 💀"
 
-fclean : clean
+fclean: clean
 	@rm -f $(NAME)
-	@echo "program push_swap 💀"
+	@$(MAKE) -C $(LIB) fclean
+	@echo "push_swap 💀"
 
-re : fclean all
+re: fclean all
 
-.PHONY: all bonus clean fclean
+.PHONY: all clean fclean re
