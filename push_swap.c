@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 21:45:56 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/15 14:10:43 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2025/12/15 17:21:44 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,10 @@ int main(int ac, char **av)
     ft_printf("fin stack a\n\n");
     print_list(stack_b);
     ft_printf("fin stack b\n\n");
-    rotate_r(stack_a, stack_b);
+    reverse_rotate_r(&stack_a, &stack_b);
     print_list(stack_a);
-    ft_printf("fin stack a apres rr\n\n");
+    ft_printf("\n\n");
     print_list(stack_b);
-    ft_printf("fin stack b apres rr\n");
-    ft_stackclear(&stack_a);
-    ft_stackclear(&stack_b);
     return (0);
 }
 

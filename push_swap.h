@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 21:44:50 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/15 14:01:09 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2025/12/15 17:20:42 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,12 @@ t_stack				*ft_addfront_stack(t_stack *stack, int n);
 t_stack				*create_stack(t_stack *stack, int *tab, int ac);
 void				ft_stackclear(t_stack **lst);
 t_stack				*rotate(t_stack *stack);
-void				rotate_a(t_stack *stack_a);
-void				rotate_b(t_stack *stack_b);
-void				rotate_r(t_stack *stack_a, t_stack *stack_b);
+void				rotate_a(t_stack **stack_a);
+void				rotate_b(t_stack **stack_b);
+void				rotate_r(t_stack **stack_a, t_stack **stack_b);
+t_stack				*reverse_rotate(t_stack *stack);
+void				reverse_rotate_a(t_stack **stack_a);
+void				reverse_rotate_b(t_stack **stack_b);
+void				reverse_rotate_r(t_stack **stack_a, t_stack **stack_b);
 
 #endif
