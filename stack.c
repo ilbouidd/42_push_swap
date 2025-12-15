@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 01:38:11 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/12 02:05:32 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2025/12/13 00:25:54 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,11 @@ int	*create_tab(int ac, char **av)
 	tab = malloc(sizeof(int) * ac);
 	if (!tab)
 		return (NULL);
-	while (av[i])
+	while (i < ac)
 	{
-		tab[i] = ft_atoi_limits(av[i]);
+		tab[i] = ft_atoi(av[i]);
 		i++;
 	}
-	tab[i] = '\0';
 	return (tab);
 }
 
@@ -67,38 +66,37 @@ t_stack	*ft_addfront_stack(t_stack *stack, int n)
 	return (new);
 }
 
-void	ft_stackclear(t_stack *lst)
+void	ft_stackclear(t_stack **lst)
 {
 	t_stack	*tmp;
 
-	if (!lst)
+	if (!lst || !*lst)
 		return ;
-	while (lst)
+	while (*lst)
 	{
-		tmp = lst->next;
-		free(lst);
-		lst = tmp;
+		tmp = (*lst)->next;
+		free(*lst);
+		*lst = tmp;
 	}
-	lst = NULL;
 }
 
 t_stack	*create_stack(t_stack *stack, int *tab, int ac)
 {
-	while (ac != 0)
+	while (ac > 0)
 	{
 		stack = ft_addfront_stack(stack, tab[ac - 1]);
-		if (stack == NULL)
-			return (free(tab), ft_stackclear(stack), NULL);
+		if (!stack)
+			return (NULL);
 		ac--;
 	}
-	return (free(tab), stack);
+	return (stack);
 }
 
-void	print_list(t_stack *lst)
+void	print_list(t_stack *stack)
 {
 	t_stack	*tmp;
 
-	tmp = lst;
+	tmp = stack;
 	while (tmp)
 	{
 		ft_printf("%d\n", tmp->value);

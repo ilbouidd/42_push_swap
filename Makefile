@@ -1,8 +1,9 @@
 SRCS =  parsing.c   \
         swap.c      \
         stack.c		\
-		main.c      \
+		push_swap.c \
 		utils.c     \
+		rotate.c    \
 
 OBJS = $(SRCS:.c=.o)
 
