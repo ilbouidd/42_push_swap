@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 21:44:50 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/15 17:20:42 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2025/12/15 20:00:10 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,10 @@ t_stack				*reverse_rotate(t_stack *stack);
 void				reverse_rotate_a(t_stack **stack_a);
 void				reverse_rotate_b(t_stack **stack_b);
 void				reverse_rotate_r(t_stack **stack_a, t_stack **stack_b);
+t_stack				*swap(t_stack *stack);
+void				swap_a(t_stack **stack_a);
+void				swap_b(t_stack **stack_b);
+void				swap_r(t_stack **stack_a, t_stack **stack_b);
+t_stack				*push(t_stack *stack_first, t_stack *stack_second);
 
 #endif

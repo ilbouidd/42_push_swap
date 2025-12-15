@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 22:36:02 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/15 14:55:48 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2025/12/15 19:10:17 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void    rotate_a(t_stack **stack_a)
 {
     *stack_a = rotate(*stack_a);
     print_list(*stack_a);
-    ft_printf("ra\n");
+    ft_printf("ra\n"); 
 }
 
 void    rotate_b(t_stack **stack_b)
