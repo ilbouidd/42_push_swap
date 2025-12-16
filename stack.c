@@ -6,37 +6,12 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 01:38:11 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/13 00:25:54 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2025/12/16 13:50:09 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// t_stack	*create_node(int n)
-// {
-// 	t_stack	*node;
-
-// 	node = malloc(sizeof(t_stack));
-// 	if (!node)
-// 		return (NULL);
-// 	node->value = n;
-// 	node->next = NULL;
-// 	return (node);
-// }
-
-// void	ft_stackadd_back(t_stack *lst, t_stack *new)
-// {
-// 	t_stack	*tmp;
-
-// 	if (!lst || !new)
-// 		return ;
-// 	tmp = lst;
-// 	while (tmp->next)
-// 	{
-// 		tmp = tmp->next;
-// 	}
-// 	tmp->next = new;
-// }
 int	*create_tab(int ac, char **av)
 {
 	int	*tab;

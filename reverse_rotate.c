@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 22:36:35 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/15 17:21:14 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2025/12/16 13:50:30 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,12 @@ t_stack *reverse_rotate(t_stack *stack)
     t_stack *node_last;
     
     node_first = stack;
-    // node_second = node_first->next;
     while (stack->next->next)
         stack = stack->next;
     node_last = stack->next;
     node_before_last = stack;
     node_last->next = node_first;
     node_before_last->next = NULL;
-    //     node_first->next->next = NULL;
-    //     print_list(stack);
-    // ft_printf("%d\n", node_before_last->value);
-    // ft_printf("%d\n", node_last->value);
     return(node_last);
 }
 

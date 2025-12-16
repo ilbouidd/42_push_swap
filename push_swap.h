@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 21:44:50 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/15 20:00:10 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2025/12/16 13:54:40 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@
 
 typedef struct s_stack
 {
-	int				value;
+	int value;    // entier
+	int index;    // index dans stack
+	int nb_coup;  // combien de coup faut t'il pour trier (index(stack_a) + index(stack_b))
+	int position; // 1 ou 0 | 1 = position haute | 0 = position basse
 	struct s_stack	*next;
+	struct s_stack *target; // cible du noeud ou je suis
 }					t_stack;
 
-// t_stack				*create_node(int n);
-// void					ft_stackadd_back(t_stack *lst, t_stack *new);
 void				print_list(t_stack *stack);
 int					is_numbers(char *av);
 long				ft_atoi_limits(char *str);
@@ -43,6 +45,8 @@ t_stack				*swap(t_stack *stack);
 void				swap_a(t_stack **stack_a);
 void				swap_b(t_stack **stack_b);
 void				swap_r(t_stack **stack_a, t_stack **stack_b);
-t_stack				*push(t_stack *stack_first, t_stack *stack_second);
+void				push(t_stack **stack_src, t_stack **stack_dst);
+void				push_a(t_stack **stack_a, t_stack **stack_b);
+void				push_b(t_stack **stack_a, t_stack **stack_b);
 
 #endif

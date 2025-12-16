@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 21:45:56 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/15 20:01:25 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2025/12/16 11:49:15 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,19 @@ int main(int ac, char **av)
     free(tab);
     if (!stack_a)
         return (-1);
-    // print_list(stack_a);
-    // ft_printf("fin stack a\n\n");
-    // print_list(stack_b);
-    // ft_printf("fin stack b\n\n");
-    push(stack_a, stack_b);
-    // print_list(stack_a);
+    ft_printf("Avant push:\n");
+    print_list(stack_a);
+    ft_printf("fin stack a \n\n");
+    print_list(stack_b);
+    ft_printf("fin stack b\n\n");
+    push_b(&stack_b, &stack_a);
+    ft_printf("Apres push:\n");
+    print_list(stack_a);
+    ft_printf("fin stack a\n\n");
+    print_list(stack_b);
+    ft_printf("fin stack b\n");
     return (0);
 }
-
 
 // int	main(int ac, char **av)
 // {
