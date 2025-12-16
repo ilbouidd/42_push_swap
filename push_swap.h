@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 21:44:50 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/16 13:54:40 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2025/12/16 14:19:32 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ typedef struct s_stack
 {
 	int value;    // entier
 	int index;    // index dans stack
-	int nb_coup;  // combien de coup faut t'il pour trier (index(stack_a) + index(stack_b))
+	int nb_coup;  // combien de coup faut t'il pour trier (index(stack_a) et index(stack_b))
 	int position; // 1 ou 0 | 1 = position haute | 0 = position basse
 	struct s_stack	*next;
 	struct s_stack *target; // cible du noeud ou je suis
@@ -48,5 +48,6 @@ void				swap_r(t_stack **stack_a, t_stack **stack_b);
 void				push(t_stack **stack_src, t_stack **stack_dst);
 void				push_a(t_stack **stack_a, t_stack **stack_b);
 void				push_b(t_stack **stack_a, t_stack **stack_b);
+void				push_tree(t_stack **stack_a, t_stack **stack_b);
 
 #endif

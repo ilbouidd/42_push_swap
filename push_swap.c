@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 21:45:56 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/16 11:49:15 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2025/12/16 14:20:49 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int main(int ac, char **av)
     if (!tab)
         return (-1);
     stack_a = create_stack(stack_a, tab, (ac - 1));
-    stack_b = create_stack(stack_b, tab, (ac - 1));
     free(tab);
     if (!stack_a)
         return (-1);
@@ -49,7 +48,7 @@ int main(int ac, char **av)
     ft_printf("fin stack a \n\n");
     print_list(stack_b);
     ft_printf("fin stack b\n\n");
-    push_b(&stack_b, &stack_a);
+    push_tree(&stack_a, &stack_b);
     ft_printf("Apres push:\n");
     print_list(stack_a);
     ft_printf("fin stack a\n\n");
