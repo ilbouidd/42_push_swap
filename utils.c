@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 22:32:09 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/12 02:05:49 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2025/12/18 08:21:09 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ long	ft_atoi_limits(char *str)
 		res = res * 10 + str[i++] - 48;
 	res = (sign * res);
 	if (res > 2147483647 || res < (-2147483648))
-		return (-1);
+		return (2147483648);
 	else
 		return (res);
 }

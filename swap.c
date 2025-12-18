@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 22:34:56 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/15 19:40:05 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2025/12/18 11:09:42 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ t_stack *swap(t_stack *stack)
 void    swap_a(t_stack **stack_a)
 {
     *stack_a = swap(*stack_a);
-    print_list(*stack_a);
     ft_printf("sa\n");
 }
 

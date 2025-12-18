@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 21:50:17 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/12 02:05:57 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2025/12/18 08:22:58 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_errors(char *av)
 {
 	if (is_numbers(av) == -1)
 		return (-1);
-	else if (ft_atoi_limits(av) == -1)
+	else if (ft_atoi_limits(av) == 2147483648)
 		return (-1);
 	else
 		return (0);

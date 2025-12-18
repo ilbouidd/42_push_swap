@@ -6,7 +6,8 @@ SRCS =  parsing.c   \
 		rotate.c    \
 		reverse_rotate.c \
 		push.c      \
-		tri.c
+		tri_three.c \
+		put_index.c \
 
 OBJS = $(SRCS:.c=.o)
 

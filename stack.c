@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 01:38:11 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/16 13:50:09 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2025/12/18 10:58:33 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,14 +67,14 @@ t_stack	*create_stack(t_stack *stack, int *tab, int ac)
 	return (stack);
 }
 
-void	print_list(t_stack *stack)
+void	print_value(t_stack *stack)
 {
 	t_stack	*tmp;
 
 	tmp = stack;
 	while (tmp)
 	{
-		ft_printf("%d\n", tmp->value);
+		ft_printf("%d ", tmp->value);
 		tmp = tmp->next;
 	}
 }

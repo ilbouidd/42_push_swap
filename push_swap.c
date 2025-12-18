@@ -6,25 +6,16 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 21:45:56 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/16 14:20:49 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2025/12/18 15:04:18 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// int main()
-// {
-// 	ft_printf("%d\n", ft_isdigit(-647454));
-// 	return (0);
-// }
-
-// int main(int ac, char **av)
-// {
-//     (void)ac;
-//     ft_printf("test is_numbers: %d\n", ft_errors(av[1]));
-//     ft_printf("test ft_atoi_limits: %d\n", ft_atoi_limits(av[1]));
-//     return (0);
-// }
+void main_ily(t_stack *stack_a, t_stack *stack_b)
+{
+    
+}
 
 int main(int ac, char **av)
 {
@@ -44,40 +35,28 @@ int main(int ac, char **av)
     if (!stack_a)
         return (-1);
     ft_printf("Avant push:\n");
-    print_list(stack_a);
-    ft_printf("fin stack a \n\n");
-    print_list(stack_b);
-    ft_printf("fin stack b\n\n");
-    push_tree(&stack_a, &stack_b);
-    ft_printf("Apres push:\n");
-    print_list(stack_a);
-    ft_printf("fin stack a\n\n");
-    print_list(stack_b);
+    print_value(stack_a);
+    ft_printf("\nfin stack a\n");
+    print_value(stack_b);
     ft_printf("fin stack b\n");
+    tri_three(&stack_a,&stack_b);
+    put_index(&stack_a, &stack_b);
+    ft_printf("Apres push:\n");
+    print_value(stack_a);
+    ft_printf("\n");
+    print_index(stack_a);
+    ft_printf("\nfin stack a\n");
+    print_value(stack_b);
+    ft_printf("\n");
+    print_index(stack_b);
+    ft_printf("\nfin stack b\n");
     return (0);
 }
 
-// int	main(int ac, char **av)
-// {
-// 	int i;
-// 	t_stack *head;
-// 	t_stack *node1;
-// 	t_stack *node2;
-
-//     if (ac < 2)
-//         return (0);
-//     i = 1;
-//     while (av[i])
-//     {
-//         if (ft_errors(av[i++]) == -1)
-//             return (-1);
-//     }
-//     i = 0;
-// 	head = create_node(ft_atoi_limits(av[1]));
-// 	node1 = create_node(ft_atoi_limits(av[2]));
-// 	node2 = create_node(ft_atoi_limits(av[3]));
-// 	ft_stackadd_back(head, node1);
-// 	ft_stackadd_back(head, node2);
-// 	print_list(head);
-// 	return (0);
+// int main(){
+//     int a;
+//     long b = 2147483698798748;
+//     a = b;
+//     printf("%d",a);
+//     return 0;
 // }
