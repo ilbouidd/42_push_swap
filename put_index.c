@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 10:41:15 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/18 14:22:34 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2025/12/20 12:15:15 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	print_index(t_stack *stack)
 		ft_printf("%d ", tmp->index);
 		tmp = tmp->next;
 	}
+    ft_printf("     index lines");
 }
 
 void put_index(t_stack **stack_a, t_stack **stack_b)

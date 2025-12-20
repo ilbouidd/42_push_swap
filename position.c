@@ -1,39 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   position.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 22:32:09 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/20 07:18:23 by ilbouidd         ###   ########.fr       */
+/*   Created: 2025/12/20 07:54:23 by ilbouidd          #+#    #+#             */
+/*   Updated: 2025/12/20 08:29:42 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	ft_atoi_limits(char *str)
+int stack_len(t_stack *stack)
 {
-	size_t	i;
-	size_t	sign;
-	long	res;
+    int i;
+	t_stack	*tmp;
 
 	i = 0;
-	sign = 1;
-	res = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+    tmp = stack;
+	while (tmp)
 	{
-		if (str[i] == '-')
-			sign = sign * (-1);
-		i++;
+		tmp = tmp->next;
+        i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-		res = res * 10 + str[i++] - 48;
-	res = (sign * res);
-	if (res > 2147483647 || res < (-2147483648))
-		return (2147483649);
-	else
-		return (res);
+    ft_printf("%d\n", i);
+    return (i);
+}
+
+void	position_in_stack(t_stack *stack)
+{
+	int	size;
+	int	mid;
+
+	size = stack_len(stack);
+	mid = size / 2;
+	while (stack)
+	{
+		if (stack->index <= mid)
+			stack->position = 1;
+		else
+			stack->position = 0;
+		stack = stack->next;
+	}
 }

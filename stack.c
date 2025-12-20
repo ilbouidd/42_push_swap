@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 01:38:11 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/18 10:58:33 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2025/12/20 12:14:48 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,5 @@ void	print_value(t_stack *stack)
 		ft_printf("%d ", tmp->value);
 		tmp = tmp->next;
 	}
+	ft_printf("     values lines");
 }

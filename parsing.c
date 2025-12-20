@@ -6,45 +6,46 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 21:50:17 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/18 08:22:58 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2025/12/20 11:54:40 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_numbers(char *av)
+int is_double(char **av, int i, int nb)
 {
-	int	i;
-
-	i = 0;
-	while (av[i])
-	{
-		if (!(av[i] >= '0' && av[i] <= '9'))
+	i = i + 1;
+    while(av[i])
+    {
+		if (nb == ft_atoi(av[i]))
 			return (-1);
 		i++;
-	}
+    }
 	return (0);
 }
 
-// int is_double(char **av)
-// {
-//     int i;
-//     int j;
-
-//     i = 0;
-//     j = 0;
-//     while(av[i])
-//     {
-//         while (ft_atoi_limits(av[i]) == )
-//     }
-// }
-
-int	ft_errors(char *av)
+int	ft_errors(char **av)
 {
-	if (is_numbers(av) == -1)
-		return (-1);
-	else if (ft_atoi_limits(av) == 2147483648)
-		return (-1);
-	else
-		return (0);
+	int	i;
+	long nb;
+	int	j;
+
+	i = 1;
+	while (av[i])
+	{
+		j = 0;
+		while (av[i][j])
+		{
+			if (ft_isdigit(av[i][j]) == 0)
+				return (-1);
+			j++;
+		}
+		nb = ft_atoi_limits(av[i]);
+		if (nb > 2147483647 || nb < -2147483648)
+			return (-1);
+		if (is_double(av, i, nb) == -1)
+			return (-1);
+		i++;
+		}
+	return (0);
 }

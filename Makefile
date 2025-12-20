@@ -8,6 +8,9 @@ SRCS =  parsing.c   \
 		push.c      \
 		tri_three.c \
 		put_index.c \
+		position.c  \
+		find_target.c \
+		count_number.c \
 
 OBJS = $(SRCS:.c=.o)
 

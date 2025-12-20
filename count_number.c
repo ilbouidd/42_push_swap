@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   count_number.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 22:32:09 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/20 07:18:23 by ilbouidd         ###   ########.fr       */
+/*   Created: 2025/12/20 11:00:15 by ilbouidd          #+#    #+#             */
+/*   Updated: 2025/12/20 12:15:37 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	ft_atoi_limits(char *str)
+void    count_number(t_stack **stack_a)
 {
-	size_t	i;
-	size_t	sign;
-	long	res;
+    t_stack *tmp;
 
-	i = 0;
-	sign = 1;
-	res = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+    tmp = (*stack_a);
+    while (tmp)
+    {
+        tmp->nb_coup = tmp->index + tmp->target->index;
+        tmp = tmp->next;
+    }
+}
+
+void	print_count_n(t_stack *stack)
+{
+	t_stack	*tmp;
+
+	tmp = stack;
+	while (tmp)
 	{
-		if (str[i] == '-')
-			sign = sign * (-1);
-		i++;
+		ft_printf("%d ", tmp->nb_coup);
+		tmp = tmp->next;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-		res = res * 10 + str[i++] - 48;
-	res = (sign * res);
-	if (res > 2147483647 || res < (-2147483648))
-		return (2147483649);
-	else
-		return (res);
+    ft_printf("     count lines");
 }
