@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 21:44:50 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/20 12:58:42 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2025/12/22 13:15:35 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,8 @@ void				find_target(t_stack *stack_a, t_stack *stack_b);
 void				count_number(t_stack **stack_a);
 void				print_target(t_stack *stack);
 void				print_count_n(t_stack *stack);
+long				find_smallest_nc(t_stack *stack_a);
+void				put_first(t_stack **stack_a, t_stack **stack_b);
+void				tri_all(t_stack **stack_a, t_stack **stack_b);
 
 #endif

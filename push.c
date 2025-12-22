@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 22:35:37 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/16 11:48:34 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2025/12/22 12:22:08 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void    push(t_stack **stack_src, t_stack **stack_dst)
 {
     t_stack *tmp;
 
-    if (! *stack_src)
-        return;
+    // if (!(*stack_src) || !(*stack_dst))
+    //     return;
     tmp = *stack_src;
     *stack_src = (*stack_src)->next;
     tmp->next = *stack_dst;

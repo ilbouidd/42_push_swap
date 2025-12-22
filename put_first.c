@@ -6,34 +6,40 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 12:32:09 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/20 13:27:17 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2025/12/22 12:22:48 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    find_smallest_nc(t_stack *stack_a)
+long    find_smallest_nc(t_stack *stack_a)
 {
+    
     t_stack *tmp;
-    int smallest;
+    long smallest;
     
     tmp = stack_a;
+    smallest = tmp->nb_coup;
     while(tmp)
     {
-       
-        if (tmp->nb_coup)
+        if (smallest > tmp->nb_coup)
+            smallest = tmp->nb_coup;
         tmp = tmp->next;
     }
+    return (smallest);
 }
 
 void    put_first(t_stack **stack_a, t_stack **stack_b)
 {
-    t_stack *tmp_a;
-    int first;
+    t_stack *tmp_b;
+    long smallest;
 
-    tmp_a = stack_a;
-    while(tmp_a)
-    {
 
-    }
+    smallest = find_smallest_nc(*stack_a);
+    while((*stack_a)->nb_coup != smallest)
+        rotate_a(stack_a);
+    tmp_b = (*stack_a)->target;
+    while((*stack_b) != tmp_b)
+        rotate_b(stack_b);
+    push_b(stack_a, stack_b);
 }

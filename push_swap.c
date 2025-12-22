@@ -6,7 +6,7 @@
 /*   By: ilbouidd <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 21:45:56 by ilbouidd          #+#    #+#             */
-/*   Updated: 2025/12/20 13:02:31 by ilbouidd         ###   ########.fr       */
+/*   Updated: 2025/12/22 13:15:14 by ilbouidd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,7 @@ void print_main(t_stack *stack_a, t_stack *stack_b)
     ft_printf("Avant push:\n");
     print_value(stack_a);
     ft_printf("\nfin stack a\n");
-    /*--------------------------------------------------*/
-    tri_three(&stack_a,&stack_b);
-    put_index(&stack_a, &stack_b);
-    find_target(stack_a, stack_b);
-    count_number(&stack_a);
-    /*--------------------------------------------------*/
+    tri_all(&stack_a, &stack_b);
     ft_printf("Apres push:\n");
     print_value(stack_a);
     ft_printf("\n");
@@ -37,7 +32,7 @@ void print_main(t_stack *stack_a, t_stack *stack_b)
     ft_printf("\n");
     print_index(stack_b);
     ft_printf("\nfin stack b\n");
-    /*--------------------------------------------------*/
+    /*--------------------------------------------------*/ 
 }
 
 int main(int ac, char **av)

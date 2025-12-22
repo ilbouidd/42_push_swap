@@ -1,22 +1,24 @@
-SRCS =  parsing.c   \
-        swap.c      \
-        stack.c		\
-		push_swap.c \
-		utils.c     \
-		rotate.c    \
-		reverse_rotate.c \
-		push.c      \
-		tri_three.c \
-		put_index.c \
-		position.c  \
-		find_target.c \
-		count_number.c \
+SRCS =  parsing.c   		\
+        swap.c      		\
+        stack.c				\
+		push_swap.c 		\
+		utils.c     		\
+		rotate.c    		\
+		reverse_rotate.c 	\
+		push.c      		\
+		tri_three.c 		\
+		put_index.c 		\
+		position.c  		\
+		find_target.c 		\
+		count_number.c 		\
+		put_first.c 		\
+		tri_all.c   		\
 
 OBJS = $(SRCS:.c=.o)
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3
 
 NAME = push_swap
 
